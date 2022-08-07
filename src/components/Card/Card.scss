@@ -1,0 +1,79 @@
+$cardBackground: hsl(216, 50%, 16%);
+$lineColor: hsl(215, 32%, 27%);
+$descColor: hsl(215, 51%, 70%);
+$priceColor: hsl(178, 100%, 50%);
+$hoverColor: hsl(215, 51%, 70%);
+
+.card {
+   width: 270px;
+   background: $cardBackground;
+   border-radius: 10px;
+   padding: 1.3rem;
+
+   .contents {
+      border-bottom: 1px solid $lineColor;
+
+     .image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .nftImg{
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .eye {
+            display: none;
+            position: absolute;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nftImg:hover ~ .eye{
+            display: block;
+        }
+     }
+     .content {
+        h1 {
+            font-size: 1.2rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        h1:hover {
+            color: $priceColor;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $descColor;
+        }
+     }
+     .content2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .price, .time {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            h3{
+                font-size: 1rem;
+                font-weight: 600;
+                color: $priceColor;
+            }
+            p{
+                font-size: 0.8rem;
+                color: $descColor;
+            }
+            h3, p{
+                margin-left: 0.3rem;
+            }
+        }
+       }
+    }
+}
